@@ -2,7 +2,7 @@
     <string name="app_name">ShoeStore</string>
     <string name="shoe_store_logo">Shoe Store Logo</string>
     <string name="shoe_store_title">Styles Shoe Store</string>
-    <string name="user_name">Username</string>
+    <string name="email">E-mail</string>
     <string name="password">Password</string>
-    <string name="login">Login</string>
+    <string name="login_or_register">Login / Register</string>
 </resources>
