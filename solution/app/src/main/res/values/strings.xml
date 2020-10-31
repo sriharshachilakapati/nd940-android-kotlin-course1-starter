@@ -7,6 +7,6 @@
     <string name="login_or_register">Login / Register</string>
     <string name="welcome">Welcome</string>
     <string name="welcome_username">Welcome %s!</string>
-    <string name="welcome_text">You\'ve come to the right place!\n\nThis is the only store where you can find a wide variety of shoes.</string>
+    <string name="welcome_text">Welcome to the Shoe Store Inventory.\n\nNow you can manage the inventory more easily!</string>
     <string name="get_started_button">Get Started Button</string>
 </resources>
