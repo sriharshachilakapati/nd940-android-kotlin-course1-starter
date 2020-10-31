@@ -1,11 +1,11 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowBackground">@drawable/gradient_background</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="AppTheme">
@@ -16,5 +16,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="TitleText">
+        <item name="android:fontFamily">@font/pacifico</item>
+        <item name="android:textColor">#111111</item>
+        <item name="android:textSize">30sp</item>
+    </style>
 
 </resources>
