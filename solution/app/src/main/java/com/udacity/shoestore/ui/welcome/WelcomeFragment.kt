@@ -23,13 +23,15 @@ class WelcomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val args = WelcomeFragmentArgs.fromBundle(requireArguments())
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
 
         with(binding) {
             onFabClicked = View.OnClickListener { onFloatingActionButtonClicked() }
 
             viewModel = this@WelcomeFragment.viewModel.apply {
-                userName = "Harsha"
+                userName = args.userName
             }
         }
 

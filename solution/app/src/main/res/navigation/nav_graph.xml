@@ -14,7 +14,8 @@
 
         <action
             android:id="@+id/toWelcomeFragment"
-            app:destination="@id/welcomeFragment" />
+            app:destination="@id/welcomeFragment"
+            app:popUpTo="@id/welcomeFragment" />
 
     </fragment>
 
@@ -22,6 +23,12 @@
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.shoestore.ui.welcome.WelcomeFragment"
         android:label="Welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome">
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
+    </fragment>
 
 </navigation>
