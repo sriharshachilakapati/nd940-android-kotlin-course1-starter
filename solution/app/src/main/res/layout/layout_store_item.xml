@@ -5,6 +5,10 @@
 
     <data>
 
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
     </data>
 
     <androidx.cardview.widget.CardView
@@ -43,6 +47,7 @@
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                android:text="@{Double.toString(shoe.size)}"
                 tools:text="8" />
 
             <TextView
@@ -53,7 +58,8 @@
                 android:layout_marginBottom="16dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:text="@string/shoe_title"
+                android:text="@{shoe.name}"
+                tools:text="@string/shoe_title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/shoe_company"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -67,7 +73,8 @@
                 android:ellipsize="end"
                 android:gravity="end"
                 android:maxLines="1"
-                android:text="@string/shoe_company"
+                android:text="@{shoe.company}"
+                tools:text="@string/shoe_company"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/shoe_title" />

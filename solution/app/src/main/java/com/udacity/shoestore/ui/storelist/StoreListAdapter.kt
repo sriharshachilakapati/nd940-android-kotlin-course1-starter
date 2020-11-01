@@ -35,9 +35,8 @@ class StoreListAdapter : RecyclerView.Adapter<StoreListAdapter.StoreItemViewHold
         val item = items[position]
 
         with(holder.binding) {
-            shoeTitle.text = item.name
-            shoeCompany.text = item.company
-            shoeSize.text = item.size.toString()
+            shoe = item
+            executePendingBindings()
         }
     }
 
