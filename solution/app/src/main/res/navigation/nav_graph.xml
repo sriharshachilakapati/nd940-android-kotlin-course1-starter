@@ -42,6 +42,20 @@
         android:id="@+id/instructionsFragment"
         android:name="com.udacity.shoestore.ui.instructions.InstructionsFragment"
         android:label="Instructions"
-        tools:layout="@layout/fragment_instructions" />
+        tools:layout="@layout/fragment_instructions">
+
+        <action
+            android:id="@+id/toStoreListFragment"
+            app:destination="@id/storeListFragment"
+            app:popUpTo="@id/instructionsFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeListFragment"
+        android:name="com.udacity.shoestore.ui.storelist.StoreListFragment"
+        android:label="Store Listing"
+        tools:layout="@layout/fragment_storelist" />
 
 </navigation>

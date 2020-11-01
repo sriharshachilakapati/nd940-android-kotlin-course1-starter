@@ -18,4 +18,8 @@
             <li>Deleting an entry can be done in the details view</li>
         </ul>
     ]]></string>
+    <string name="add_item">Add Item</string>
+    <string name="shoe_image">Shoe image</string>
+    <string name="shoe_title">Shoe Title</string>
+    <string name="shoe_company">Shoe Company</string>
 </resources>

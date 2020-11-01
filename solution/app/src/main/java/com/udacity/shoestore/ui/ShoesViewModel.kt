@@ -19,7 +19,7 @@ class ShoesViewModel : ViewModel() {
         Shoe("CALYFIA Sneakers for Women", 7.0, "Fila", "Perfect sneakers for women.")
     )
 
-    private val _shoes = MutableLiveData<List<Shoe>>()
+    private val _shoes = MutableLiveData<List<Shoe>>(shoesList)
 
     val shoes: LiveData<List<Shoe>>
         get() = _shoes
