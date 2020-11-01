@@ -43,11 +43,6 @@ class WelcomeFragment : Fragment() {
         (activity as? AppCompatActivity)?.supportActionBar?.hide()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        (activity as? AppCompatActivity)?.supportActionBar?.show()
-    }
-
     private fun onFloatingActionButtonClicked() {
         Timber.d("Hello World")
         Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show()
