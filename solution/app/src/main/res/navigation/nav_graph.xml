@@ -30,6 +30,18 @@
             android:name="userName"
             app:argType="string" />
 
+        <action
+            android:id="@+id/toInstructionsFragment"
+            app:destination="@id/instructionsFragment"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.udacity.shoestore.ui.instructions.InstructionsFragment"
+        android:label="Instructions"
+        tools:layout="@layout/fragment_instructions" />
 
 </navigation>

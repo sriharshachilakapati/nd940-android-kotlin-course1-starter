@@ -8,5 +8,14 @@
     <string name="welcome">Welcome</string>
     <string name="welcome_username">Welcome %s!</string>
     <string name="welcome_text">Welcome to the Shoe Store Inventory.\n\nNow you can manage the inventory more easily!</string>
-    <string name="get_started_button">Get Started Button</string>
+    <string name="get_started_button">Get Started</string>
+    <string name="instructions">Instructions</string>
+    <string name="instructions_text"><![CDATA[
+        <ul>
+            <li>See the current list of shoes</li>
+            <li>Click on the <strong>plus</strong> button to add a new shoe</li>
+            <li>Click on a shoe tile to open a details view</li>
+            <li>Deleting an entry can be done in the details view</li>
+        </ul>
+    ]]></string>
 </resources>
