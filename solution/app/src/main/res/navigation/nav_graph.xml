@@ -77,4 +77,10 @@
 
     </dialog>
 
+    <action
+        android:id="@+id/toLoginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
 </navigation>

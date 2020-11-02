@@ -1,12 +1,15 @@
 package com.udacity.shoestore.ui
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.udacity.shoestore.NavGraphDirections
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ActivityMainBinding
 import timber.log.Timber
@@ -32,6 +35,22 @@ class MainActivity : AppCompatActivity() {
             navController,
             appBarConfiguration
         )
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_item_logout) {
+            val navigateTo = NavGraphDirections.toLoginFragment()
+            navController.navigate(navigateTo)
+
+            return true
+        }
+
+        return false
     }
 
     override fun onSupportNavigateUp(): Boolean =
