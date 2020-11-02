@@ -1,6 +1,7 @@
 package com.udacity.shoestore.ui.details
 
 import android.view.View
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.R
@@ -19,6 +20,17 @@ class ItemDetailsEditorViewModel : ViewModel() {
 
     val isInEditMode: Boolean
         get() = _isInEditMode
+
+    private val _canSave = MutableLiveData(false)
+
+    val canSave: LiveData<Boolean>
+        get() = _canSave
+
+    fun updateCanWeSave() {
+        _canSave.value = !shoeTitle.value.isNullOrBlank() &&
+                !shoeSize.value.isNullOrBlank() &&
+                !shoeCompany.value.isNullOrBlank()
+    }
 
     var shoe: Shoe = Shoe("", 0.0, "", "")
         get() = field.apply {

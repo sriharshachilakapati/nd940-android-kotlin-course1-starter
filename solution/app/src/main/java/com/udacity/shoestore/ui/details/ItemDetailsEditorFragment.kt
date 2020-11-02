@@ -6,6 +6,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.udacity.shoestore.R
@@ -38,6 +39,16 @@ class ItemDetailsEditorFragment : BottomSheetDialogFragment() {
             onSaveButtonClicked = View.OnClickListener { onSaveButtonClicked() }
             onCancelButtonClicked = View.OnClickListener { onCancelButtonClicked() }
             onDeleteButtonClicked = View.OnClickListener { onDeleteButtonClicked() }
+
+            lifecycleOwner = this@ItemDetailsEditorFragment
+        }
+
+        with(viewModel) {
+            val observer = Observer<Any> { viewModel.updateCanWeSave() }
+
+            shoeTitle.observe(this@ItemDetailsEditorFragment, observer)
+            shoeCompany.observe(this@ItemDetailsEditorFragment, observer)
+            shoeSize.observe(this@ItemDetailsEditorFragment, observer)
         }
 
         dialog.setContentView(binding.root)
