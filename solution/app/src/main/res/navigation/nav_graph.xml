@@ -15,6 +15,10 @@
         <action
             android:id="@+id/toWelcomeFragment"
             app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
 
@@ -33,6 +37,10 @@
         <action
             android:id="@+id/toInstructionsFragment"
             app:destination="@id/instructionsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/welcomeFragment"
             app:popUpToInclusive="true" />
 
@@ -47,6 +55,10 @@
         <action
             android:id="@+id/toStoreListFragment"
             app:destination="@id/storeListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
             app:popUpTo="@id/instructionsFragment"
             app:popUpToInclusive="true" />
 
@@ -60,7 +72,11 @@
 
         <action
             android:id="@+id/toDetailsEditorFragment"
-            app:destination="@id/detailsEditorFragment" />
+            app:destination="@id/detailsEditorFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
 
     </fragment>
 
@@ -80,6 +96,10 @@
     <action
         android:id="@+id/toLoginFragment"
         app:destination="@id/loginFragment"
+        app:enterAnim="@anim/fade_in"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/fade_out"
         app:popUpTo="@id/nav_graph"
         app:popUpToInclusive="true" />
 
