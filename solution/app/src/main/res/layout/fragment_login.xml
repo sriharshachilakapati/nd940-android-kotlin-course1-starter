@@ -93,7 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:enabled="@{viewModel.areFieldsFilled}"
+                        android:enabled="@{viewModel.isLoginEnabled}"
                         android:onClick="@{onLoginButtonClicked}"
                         android:text="@string/login_or_register" />
 

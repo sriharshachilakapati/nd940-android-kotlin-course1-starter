@@ -4,16 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+private val EMAIL_REGEX = "^[A-Za-z](.*)([@])(.+)(\\.)(.+)".toRegex()
+
 class LoginViewModel : ViewModel() {
     val email = MutableLiveData("")
     val password = MutableLiveData("")
 
-    private val _areFieldsFilled = MutableLiveData(false)
+    private val _isLoginEnabled = MutableLiveData(false)
 
-    val areFieldsFilled: LiveData<Boolean>
-        get() = _areFieldsFilled
+    val isLoginEnabled: LiveData<Boolean>
+        get() = _isLoginEnabled
 
     fun fieldsUpdated() {
-        _areFieldsFilled.postValue(!email.value.isNullOrBlank() && !password.value.isNullOrBlank())
+        _isLoginEnabled.value = !email.value.isNullOrBlank()
+                && !password.value.isNullOrBlank()
+                && EMAIL_REGEX.matches(email.value!!)
     }
 }
