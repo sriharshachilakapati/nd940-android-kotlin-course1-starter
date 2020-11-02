@@ -22,4 +22,9 @@
     <string name="shoe_image">Shoe image</string>
     <string name="shoe_title">Shoe Title</string>
     <string name="shoe_company">Shoe Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="dialog_header">Dialog Header</string>
 </resources>

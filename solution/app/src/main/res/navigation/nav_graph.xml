@@ -56,6 +56,25 @@
         android:id="@+id/storeListFragment"
         android:name="com.udacity.shoestore.ui.storelist.StoreListFragment"
         android:label="Store Listing"
-        tools:layout="@layout/fragment_storelist" />
+        tools:layout="@layout/fragment_storelist" >
+
+        <action
+            android:id="@+id/toDetailsEditorFragment"
+            app:destination="@id/detailsEditorFragment" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/detailsEditorFragment"
+        android:name="com.udacity.shoestore.ui.details.ItemDetailsEditorFragment"
+        android:label="Details Editor"
+        tools:layout="@layout/fragment_item_details_editor" >
+
+        <argument
+            android:name="shoe"
+            app:argType="com.udacity.shoestore.models.Shoe"
+            app:nullable="true" />
+
+    </dialog>
 
 </navigation>

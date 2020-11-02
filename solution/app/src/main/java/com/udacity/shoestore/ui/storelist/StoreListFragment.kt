@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentStorelistBinding
 import com.udacity.shoestore.ui.ShoesViewModel
@@ -47,6 +48,7 @@ class StoreListFragment : Fragment() {
     }
 
     private fun onAddFabClicked() {
-        TODO("Implement the navigation")
+        val navigateTo = StoreListFragmentDirections.toDetailsEditorFragment(null)
+        findNavController().navigate(navigateTo)
     }
 }
