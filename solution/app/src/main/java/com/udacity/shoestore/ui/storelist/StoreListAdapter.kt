@@ -1,6 +1,7 @@
 package com.udacity.shoestore.ui.storelist
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,8 @@ class StoreListAdapter : RecyclerView.Adapter<StoreListAdapter.StoreItemViewHold
             field = value
             notifyDataSetChanged()
         }
+
+    var itemClickHandler: (Shoe) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -36,6 +39,8 @@ class StoreListAdapter : RecyclerView.Adapter<StoreListAdapter.StoreItemViewHold
 
         with(holder.binding) {
             shoe = item
+            onClickListener = View.OnClickListener { itemClickHandler(item) }
+
             executePendingBindings()
         }
     }

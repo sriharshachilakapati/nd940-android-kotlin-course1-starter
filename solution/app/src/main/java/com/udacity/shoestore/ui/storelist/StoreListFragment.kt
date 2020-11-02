@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentStorelistBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.ui.ShoesViewModel
 
 class StoreListFragment : Fragment() {
@@ -37,6 +38,7 @@ class StoreListFragment : Fragment() {
         shoesViewModel.shoes.observe(viewLifecycleOwner) {
             val adapter = binding.recyclerView.adapter as StoreListAdapter
             adapter.items = it
+            adapter.itemClickHandler = this::onStoreItemClicked
         }
 
         return binding.root
@@ -49,6 +51,11 @@ class StoreListFragment : Fragment() {
 
     private fun onAddFabClicked() {
         val navigateTo = StoreListFragmentDirections.toDetailsEditorFragment(null)
+        findNavController().navigate(navigateTo)
+    }
+
+    private fun onStoreItemClicked(shoe: Shoe) {
+        val navigateTo = StoreListFragmentDirections.toDetailsEditorFragment(shoe)
         findNavController().navigate(navigateTo)
     }
 }

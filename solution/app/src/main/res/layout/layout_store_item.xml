@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="onClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
             name="shoe"
             type="com.udacity.shoestore.models.Shoe" />
 
@@ -16,6 +20,7 @@
         android:layout_height="200dp"
         android:layout_marginHorizontal="8dp"
         android:layout_marginVertical="8dp"
+        android:onClick="@{onClickListener}"
         app:cardElevation="16dp"
         app:cardCornerRadius="16dp">
 
