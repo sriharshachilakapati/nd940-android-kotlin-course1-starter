@@ -29,12 +29,7 @@ class ShoesViewModel : ViewModel() {
         _shoes.value = shoesList
     }
 
-    fun updateShoe(shoe: Shoe) {
-        with(shoesList) {
-            remove(shoe)
-            add(shoe)
-        }
-
+    fun updateShoe(@Suppress("UNUSED_PARAMETER") shoe: Shoe) {
         _shoes.value = shoesList
     }
 

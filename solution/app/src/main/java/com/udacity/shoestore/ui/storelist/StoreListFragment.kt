@@ -25,21 +25,10 @@ class StoreListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_storelist, container, false)
+        binding.onAddFabClicked = View.OnClickListener { onAddFabClicked() }
 
-        with(binding) {
-            onAddFabClicked = View.OnClickListener { onAddFabClicked() }
-
-            // Though the rubric mentioned to use a ScrollView with a vertical LinearLayout,
-            // I thought it is better to use a RecyclerView instead because of performance
-            // reasons. Also the code is a bit neat if we use them.
-            recyclerView.adapter = StoreListAdapter()
-        }
-
-        shoesViewModel.shoes.observe(viewLifecycleOwner) {
-            val adapter = binding.recyclerView.adapter as StoreListAdapter
-            adapter.items = it
-            adapter.itemClickHandler = this::onStoreItemClicked
-        }
+        val manager = StoreListManager(binding.itemsLinearLayout, this::onStoreItemClicked)
+        shoesViewModel.shoes.observe(viewLifecycleOwner, manager::reRender)
 
         return binding.root
     }
