@@ -12,8 +12,11 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- A LinearLayout is better here since there are only two vertically stacked children -->
+    <LinearLayout
         android:layout_width="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         android:layout_height="match_parent">
 
         <TextView
@@ -22,27 +25,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/instructions"
-            app:layout_constraintBottom_toTopOf="@id/instructions_card"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            android:text="@string/instructions"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/instructions_card"
-            android:layout_width="0dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            app:cardBackgroundColor="#CDCDCD"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_text"
+            app:cardBackgroundColor="@color/lightGrey"
             app:cardCornerRadius="16dp"
-            app:cardElevation="16dp"
-            app:layout_constraintWidth_max="300dp">
+            app:cardElevation="16dp">
 
+            <!-- Though the layout looks a bit complex visually, a lot of complexity
+                 was avoided because of the use of text drawables. With that out of
+                 the box, all we have now is a set of vertically stacked views. That's
+                 why LinearLayout was chosen here. -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,5 +91,5 @@
 
         </androidx.cardview.widget.CardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

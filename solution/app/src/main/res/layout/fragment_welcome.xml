@@ -16,6 +16,10 @@
 
     </data>
 
+    <!-- ConstraintLayout was chosen here because there is a vertical stack of text
+         in the center, and also an FAB which is attached to the end. It's the only
+         obvious choice. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -46,7 +50,7 @@
             android:layout_marginEnd="32dp"
             android:gravity="center"
             android:text="@string/welcome_text"
-            android:textColor="#FFFFFF"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

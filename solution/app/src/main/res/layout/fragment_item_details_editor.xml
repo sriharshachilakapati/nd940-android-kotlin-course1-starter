@@ -36,37 +36,48 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="16dp">
 
+            <!-- This dialog layout is a bit complex layout. If we think in a
+                 traditional uni-directional stack model, we'd be needing one
+                 vertical stack (LinearLayout) with three horizontal stacks,
+                 and one dummy view for the spacing between delete button and
+                 other buttons. That's three levels of nesting, and can be
+                 reduced to one level by using ConstraintLayout. It's simple
+                 and also efficient when laying out. -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <LinearLayout
+                <View
                     android:id="@+id/dialog_header"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/gradient_background"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/dialog_header"
-                        android:paddingHorizontal="16dp"
-                        app:imageResource="@{viewModel.dialogIcon}"
-                        app:tint="@android:color/white"
-                        tools:src="@drawable/ic_edit" />
+                <ImageView
+                    android:id="@+id/dialog_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/dialog_header"
+                    android:paddingHorizontal="16dp"
+                    app:imageResource="@{viewModel.dialogIcon}"
+                    app:layout_constraintBottom_toBottomOf="@id/dialog_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/dialog_header"
+                    app:tint="@android:color/white"
+                    tools:src="@drawable/ic_edit" />
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@{viewModel.dialogTitle}"
-                        android:textColor="@android:color/white"
-                        tools:text="@string/edit_item" />
-
-                </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.dialogTitle}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/dialog_header"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/dialog_icon"
+                    app:layout_constraintTop_toTopOf="@id/dialog_header"
+                    tools:text="@string/edit_item" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/shoe_title_edit_text"
@@ -130,7 +141,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="24dp"
-                    android:background="#CCCCCC"
+                    android:background="@color/lightGrey"
                     app:layout_constraintTop_toBottomOf="@id/shoe_company_edit_text" />
 
                 <Button
@@ -163,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="0dp"
                     android:layout_marginStart="0dp"
-                    android:backgroundTint="#E80303"
+                    android:backgroundTint="@color/watchableRed"
                     android:onClick="@{onDeleteButtonClicked}"
                     android:visibility="@{viewModel.deleteButtonVisibility}"
                     app:icon="@drawable/ic_delete"

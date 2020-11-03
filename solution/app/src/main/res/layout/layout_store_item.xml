@@ -24,6 +24,10 @@
         app:cardElevation="16dp"
         app:cardCornerRadius="16dp">
 
+        <!-- This layout is a bit complex one. Stacking can be seen on all three
+             dimensions, vertical, horizontal and also z-stack. To limit the nesting
+             of views, ConstraintLayout is the best bet here. -->
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,7 +39,7 @@
                 android:layout_height="0dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:background="#DEDEDE"
+                android:background="@color/lightGrey"
                 android:contentDescription="@string/shoe_image"
                 android:scaleType="center"
                 android:src="@drawable/ic_image_placeholder"
@@ -46,7 +50,7 @@
                 android:id="@+id/shoe_size"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#4D000000"
+                android:background="@color/floatingLabelBackground"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
                 android:textColor="@android:color/white"
